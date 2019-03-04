@@ -1,0 +1,84 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="final.css">
+</head>
+
+<body>
+
+<h1>Finally</h1>
+
+<p>If you're reading this, you already successfully checked out the final. Sweet.</p>
+
+<p>Rules and Guidelines</p>
+<ul>
+	<li>You may use any resources except other people, or classmates' work. Googling public information is fine.</li>
+	<li>You <strong>may not</strong> copy and paste code off the internet. Write it yourself, in your own way.</li>
+	<li>Commit and push often! <strong>Do not</strong> commit the vendor folder.</li>
+</ul>
+
+<h2>Setup</h2>
+
+<ol>
+	<li>If you didn't already, move this folder into Apache's htdocs and start up Apache and MySQL through the XAMPP control panel.</li>
+	<li>In your working directory, install Propel, Slim and Twig. While that's happening, move on to set up your database. The <code>composer.json</code> is already here, just do:
+		<pre>
+composer install
+composer dump-autoload</pre>
+	</li>
+	<li>Create a database called <code>them</code> and import the <em>them.sql</em> file.</li>
+	<li><em>If necessary, update the <code>generated-conf/config.php</code> file to match you local database settings (user, password, host, port)</em></li>
+	<li>Confirm that you can view <code>public/app.php</code> through <code>http://localhost</code> in your browser</li>
+</ol>
+
+<h2>The List</h2>
+
+<p>In the holiday spirit, I decided to make a list of my enemies, so that I don't forget to get them if it's the last thing I do. It's not finished though, so you'll have to help me out. The default route for <code>app.php</code> is already there and loads a mocked up view.</p>
+
+<h2>Question 1  (free points)</h2>
+
+<p>Fine, CSS. Change the title ("The List") to be red on a green background, in keeping with the festive season.</p>
+
+<p>You have to put your CSS answer in <code>public/main.css</code>.</p>
+
+<h2>Question 2  (10 points)</h2>
+
+<p>Now to real work. PHP here, not JavaScript yet. Make the page show the actual data from the database. You already have the database and Propel ORM model, and there's some sample data in there. Update <code>app.php</code> and <code>thelist.html</code> template as necessary.
+
+<p>As everyone knows, it's critical to prioritize one's enemies, so make sure they show up in order (priority 1 gets it first).</p>
+
+<h2>Question 3 (10 points)</h2>
+
+<p>Still PHP here, not JavaScript yet.</p>
+
+<p>If you fill out the form and POST to add an enemy, it goes to the right route and adds to the database, but then it breaks. Fix it, and update the error handling with some nice on-page error banners to complain about:</p>
+<ul>
+	<li>Blank name</li>
+	<li>Blank priority</li>
+	<li>Non-numeric priority</li>
+</ul>
+
+<p>I kid you not, "used a javascript pop-up alert message" gets you on the list.</p>
+
+<p>Also, make it so that when there's an error, the add item fields don't go back to blank. I have some pretty in-depth justifications, and I don't want to have to re-type them.</p>
+
+<p>Update <code>app.php</code> and <code>thelist.html</code> template as necessary. No JavaScript here!</p>
+
+<h2>Question 4 (5 points)</h2>
+
+<p>Oops! When you add someone, the URL changes, and the links to the CSS and JavaScript files break (see the network panel for details). Fix it.</p>
+
+<h2>Question 5 (10 points)</h2>
+
+<p>I made a local JavaScript function to remove people from the list after I...take care of them. But it only changes the page, not the database! 
+	Try remove someone, then reload and they come back. Use AJAX to send a delete request to a new route to actually remove them. Send the id of the enemy! 
+	On the server-side, make sure the enemy in question exists and delete them. You don't need to worry about returning any errors.</p>
+
+<p>Update <code>app.php</code>, <code>thelist.html</code> and <code>thelist.js</code> as necessary. Use AJAX, don't reload the page!</p>
+
+<h2>Bonus Question!</h2>
+
+<p>I like to feel like I'm accomplishing things. Update the delete route you just wrote (Q5) to keep count of how many people I've removed in this session (since I opened my web browser). Use the session mechanism, not the database. Return that number from the AJAX call whenever I remove someone, and add a nice, celebratory banner above the table that shows how many people have gotten what was coming to them.</p>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+
+tr { height: 100px }
+
+td { text-align: center; border: 1px solid black; width: 100px }
+
+.whack { width : 80px }
+
+/*Q1a Without adding to the html page, make the title at the top ("Midterm") centered, blue and change the font to Courier New.*/
+h1 {
+    text-align: center;
+    width: 100%;
+    color: blue;
+    font-family: "Courier New";
+}
+
+/*Q1b: Adding only an id attribute to the html page, put a thin green border (rectangle) around this sentence.*/
+
+#Q1b {
+    border: 1px solid green;
+}
+
+/*Q1c: Adding only a class attribute to the html page, make the subtitle at the top ("Everybody get excited!") centered, italic and red.*/
+
+.Q1c {
+    text-align: center;
+    font-style: italic;
+    color: red;
+}
+

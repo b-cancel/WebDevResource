@@ -1,0 +1,150 @@
+
+<html>
+
+        <head>
+        <title>Lab01: JavaScript Exercises</title>
+        </head>
+        
+        <body>
+        
+        <h1>Lab01: JavaScript Exercises</h1>
+        
+        <p>Save this file and open it locally in your web browser. The <code>inline</code> JavaScript below will run whenever you refresh the page.</p>
+        
+        <p>To complete this lab, edit the JavaScript to do as indicated.</p>
+        
+        <p>Since the results are being printed to the console, you will have to open your JavaScript console to see them.</p>
+        
+        <p>(<code>More Tools -> Developer Tools -> Console</code> in Chrome).</p>
+        
+        <script>
+        // JavaScript is interpreted top to bottom, so any code in this file will be run 
+        // as soon as it's loaded into a browser. Functions can be defined along the way as well.
+        
+        console.log("This is how you print to the console!");
+        
+        // The JavaScript console doesn't support user input - we'll be working with content on
+        // web pages. For these exercises, we'll just assign hardcoded values to variables. Note
+        // the point is that the code must work with any values you choose!
+        
+        
+        // Q1: Declare two variables and set them to floating-point values.
+        //     Display (on the console) the product of the two variables.
+        var float1 = 12.2
+        var float2 = 132.1241
+        console.log("QUESTION 1")
+        console.log("Sum of " + float1 + " and " + float2 + " = " + (float1 + float2))
+        
+        // Q2: Declare four variables and set them to floating-point values.
+        //     Calculate the average of those variables and display it.
+        var var1 = 12124.1
+        var var2 = 12
+        var var3 = 1
+        var var4 = 892.215
+        console.log("QUESTION 2")
+        console.log("Average: " + ((var1 + var2 + var3 + var4)/4))
+        
+        // Q3: Declare two variables and set them to string values.
+        //     If the two strings are the same, display "Equal".
+        //     If the two strings are not the same, display "Not Equal".
+        var str1 = "hi budo"
+        var str2 = "hi Mudo"
+        console.log("QUESTION 3")
+        if(str1 == str2) console.log("Equal")
+        else console.log("Not Equal")
+        
+        // Q4: Declare a variable and set it to an integer value.
+        //     Determine whether the variable is even or odd, and display "Even" or "Odd".
+        var int1 = 5
+        console.log("QUESTION 4")
+        if(int1 % 2 == 0) console.log("Even")
+        else console.log("Odd")
+        
+        // Q5: Write a function that takes two variables and returns the value of the larger one.
+        //     Using that function and the four variables from Q2, display the value of the largest one.
+        function returnLargest(a, b){
+            if(typeof(a) == typeof(b)){
+                if(a>b) return a
+            else return b
+            }
+            //ELSE... not specified
+        }
+        varsFromQ2 = [var1, var2, var3, var4]
+        largest = var1
+        varsFromQ2.forEach(function(element) {
+            if(largest != element) largest = returnLargest(largest, element)
+        })
+        console.log("QUESTION 5")
+        console.log("Largest: " + largest)
+        
+        // Q6: Declare an array of five integer values.
+        //     Using a loop, calculate and display their sum and average.
+        integers = [1,6,2,83,2]
+        sum = 0
+        integers.forEach(function(element){
+            sum += element
+        })
+        console.log("QUESTION 6")
+        console.log("Average: " + (sum/5))
+        
+        // Q7: Write a function that takes an integer N and uses a loop to display all the positive 
+        //     integers up to N.
+        //     Call that function with the value 8 to display "1 2 3 4 5 6 7 8".
+        //     (note! do it on one line using string concatenation)
+        function printTillN(n){
+            str = ""
+            for(i=1; i<=n; i++) str = i + " " + str
+            return str
+        }
+        console.log("QUESTION 7")
+        console.log(printTillN(8))
+        
+        // Q8: Using nested loops, and the variable from Q4, display that many rows of numbers.
+        //     The first row should have 1, the second row should have 1 2, third row should have 1 2 3
+        //     and so on.
+        // e.g. Input: 4
+        // Display: 1
+        //          1 2
+        //          1 2 3
+        //          1 2 3 4
+        console.log("QUESTION 8")
+        for(r = 1; r <= int1; r++){
+            str = ""
+            for(c = 1; c <= r; c++){
+                str = str + c + " "
+            }
+            console.log(str)
+        }
+        
+        // Q9: Using the array forEach method, display the numbers in the array from Q6.
+        console.log("QUESTION 9")
+        integers.forEach(function(element){
+            console.log(element)
+        })
+        
+        // Q10: Write a function that takes an array of numbers and returns the smallest value.
+        //      Call that function with the array from Q6 and display the returned value.
+        function returnSmallest(array){
+            smallest = array[0]
+            array.forEach(function(element){
+                if(typeof(element) != "number") return //exception covering, must take in an array of numbers
+                if(smallest != element) smallest = smallest < element ? smallest : element
+            })
+            return smallest
+        }
+        console.log("QUESTION 10")
+        console.log("Smallest: " + returnSmallest(integers));
+        
+        // Q11: Declare an associative array with three names as keys and ages as values.
+        //      Display all the key/value pairs like: "Jose is 17".
+        nameToAge = {"Joe":17, "Jessica":19, "Arisly":22}
+        console.log("QUESTION 11")
+        for(var name in nameToAge){
+            console.log(name + " is " + nameToAge[name])
+        }
+        
+        </script>
+        
+        </body>
+        
+        </html>

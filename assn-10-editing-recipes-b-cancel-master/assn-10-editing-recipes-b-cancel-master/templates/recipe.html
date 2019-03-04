@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+
+<script src="{{ base_url() }}/../../javascript/recipe.js"></script>
+<div class="container everythingInline" id="{{ recipe.getID() }}">
+    <a href="{{ path_for('recipes') }}">Back</a>
+    <br>
+    <h1 class="my-4 text-center text-lg-left" id="recipeName">{{ recipe.getName() }}</h1>
+    <br>
+    <h4>Prep Time: &nbsp;</h4><h4 id="recipePrepTime">{{ recipe.getPrepTime() }}</h4>
+    <br>
+    <h4>Total Time: &nbsp;</h4><h4 id="recipeTotalTime">{{ recipe.getTotalTime() }}</h4>
+    <br>
+    <h5>Description: &nbsp;</h5><h5 id="recipeDescription">{{ recipe.getDescription() }}</h5></div>
+    <br>
+    
+{% endblock %}
+
+{% block content %}
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<div class="container recipeStep">
+    <div class="row">
+        <div class="how-it-work" id="{{ recipe.getID() }}">
+            {% if stepsLength >= 1 %}
+                <ol id="sortable" style="list-style-type: none;">
+                    {% for i in 0..stepsLength %}
+                        <li>
+                            <div class="panel panel-default col-sm-10 col-sm-offset-2">
+                                <div class="panel-body" id="{{ step.getID() }}">
+                                    <span class="recipeStepNumber"> {{ steps[i].getStepNumber() }} </span> 
+                                    <h3 class="step-heading"> Step {{ steps[i].getStepNumber() }} </h3>
+                                    <description class="recipeStepDescription">{{ steps[i].getDescription() }}</description>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}   
+                </ol>
+            {% endif %}
+            <ol style="list-style-type: none;">
+                <li>
+                    <div class="panel panel-default col-sm-10 col-sm-offset-2" id="{{ recipe.getID() }}">
+                        <div class="panel-body" id="addStep">
+                            <span class="recipeStepNumber"> + </span> 
+                        </div>
+                    </div>
+                </li>              
+            </ol>  
+        </div>
+    </div>
+</div>
+{% endblock %}  

@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{{ recipe.getName() }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="how-it-work">
+            {% for step in recipe.getStepss() %}
+                <div class="panel panel-default col-sm-10 col-sm-offset-2">
+                    <div class="panel-body">
+                        <span> {{ step.getStepNumber() }} </span> <h3 class="step-heading"> Step {{ step.getStepNumber() }} </h3>
+                        {{ step.getDescription() }}
+                    </div>
+                </div>
+            {% endfor %}   
+        </div>
+    </div>
+</div>
+{% endblock %}  

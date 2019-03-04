@@ -1,0 +1,4 @@
+place file in "htdocs" folder of XAMPP=
+start XAMPP Apache server
+Now you can access your html web page via web browser at its path 
+EX: "localhost/yourwebpage.html". if yourwebpage.html is in the root of "htdocs"

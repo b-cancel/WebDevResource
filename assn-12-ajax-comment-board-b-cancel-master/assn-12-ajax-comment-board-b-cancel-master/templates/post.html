@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<title>JavaScript Comment Board</title>
+		<link rel="stylesheet" href="{{ base_url() }}/../../css/style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<script
+		src="https://code.jquery.com/jquery-3.3.1.js"
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous"></script>
+		<script>
+			var baseurl = "{{ base_url() }}"
+		</script>
+	</head>
+	<body>
+			<div class="container">
+					<div class="pb-2 mt-4 mb-2 border-bottom">
+						<h1>My Fake Blog</h1>
+					</div>
+					<!--logout start-->
+					<div id="logout">
+						<div class="row justify-content-md-center mt-5">
+							<div class="card" style="width: 36rem;">
+								<div class="card-body">
+									<h5 class="card-title">Sign in to add your own comments.</h5>
+									<form>
+										<div class="form-group">
+											<label for="exampleInputEmail1">Username</label>
+											<input  id="username" type="textbox" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+										</div>
+										<div class="form-group">
+												<label for="exampleInputPassword1">Password</label>
+												<input id="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+										</div>
+										<div class="p-2 mb-2">*If you don't have an account it will automatically be created for you.</div>
+										<div id="error" class="alert-danger p-2 mb-2" style="display: none;">Your username or password is incorrect.</div>
+										<button class="btn btn-primary" id="submitBtn">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--logout end-->
+					<!--login start-->
+					<div id="login" style="display: none;">
+						<p>Hello, <user>testgal</user>! (<a href="" id="loggoutBtn"><em>logout</em></a>)</p>
+						<div class="container">
+							<div class="row col-md-8 col-md-offset-2">
+								<h2>Post About Thing</h2>
+								<div class="card w-100">
+									<h3 class="card-header">Add a comment</h3>
+									<div class="card-body">
+										<form>
+											<div class="form-group">
+												<textarea rows="4" cols="60" class="form-control" placeholder="Comment" id="commentBox"></textarea>
+											</div>
+											<div class="form-group">
+												<button class="btn btn-primary" id="postBtn" type="button">Post</button>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div id="ERROR" class="alert alert-danger mt-3" role="alert">
+									This is a danger alert—check it out!
+								</div>
+								<div id = "DUP" class="CARD_DUPLICATEABLE card w-100 mt-3 hidden">
+									<div class="card-header">
+										<div class="row">
+											<div class="col-md-11">
+												<h4>etomai</h4>
+											</div>
+											<div class="col-md-1">
+												<button class="delete_btn" type="button">X</button>
+											</div>
+										</div>
+									</div>
+				
+									<div class="card-body">
+										<p>This is my comment.  I think the post is too long.</p>
+										<p class="custom_date">posted on XXX</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--login end-->
+				</div>
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="{{ base_url() }}/../../javascript/comment.js"></script>
+	</body>
+</html>

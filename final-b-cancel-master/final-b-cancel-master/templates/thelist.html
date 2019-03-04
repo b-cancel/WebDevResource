@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{ base_url() }}/../thelist.css">
+		<!--make the base url accessible to javascript files-->
+		<script> var baseurl = "{{ base_url() }}"; </script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="page-header">
+				<h1>The List</h1>
+				<h1 class="alert alert-info" role="alert" 
+				{% if not killCount %}
+					style="display: none;" 
+				{% endif %}
+				id="countBanner">Woooohooo you have "take care of" <span id="countNumber">{{ killCount }}</span> people in this session</h1>
+			</div>
+			<table class="table">
+				<tr>
+					<th class="col-sm-1">Priority</th>
+					<th class="col-sm-3">Name</th>
+					<th class="col-sm-8">Justified!</th>
+				</tr>
+				{% for enemy in enemies %}
+					<tr id={{ enemy.getId() }}>
+						<td>
+							<button class="btn btn-xs del" id="<?=$e->id?>">X</button>
+							{{ enemy.getPriority() }}
+						</td>
+						<td>{{ enemy.getUsername() }}</td>
+						<td class="edit">{{ enemy.getJustification() }}</td>
+					</tr>
+				{% endfor %}
+				<form action="{{ base_url() }}/add" method="POST">
+					<tr>
+						<td>
+							<input class="form-control" type="text" name="priority" 
+							value="{{ priority }}" 
+							placeholder="#">
+						</td>
+						<td>
+							<input class="form-control" type="text" name="username" 
+							value="{{ username }}"  placeholder="name">
+						</td>
+						<td>
+							<input class="form-control" type="text" name="justification"
+							value="{{ justification }}"  placeholder="why?">
+						</td>
+					</tr>
+					<tr>
+						{% if message %}
+							<div class="alert alert-danger" role="alert">{{ message }}</div>
+						{% endif %}
+					</tr>
+					<tr>
+						<td colspan="3">
+							<button class="btn btn-primary">You're on the List</button>
+						</td>
+					</tr>
+				</form>
+			</table>
+		</div>
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="{{ base_url() }}/../thelist.js"></script>
+	</body>
+</html>

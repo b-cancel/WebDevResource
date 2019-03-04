@@ -1,0 +1,15 @@
+When the user searches, make AJAX requests for a .js file for each keyword in the search. If there is no file for one of the keywords, it should just move on.
+
+Using the scores in the files, sort the results (combining from multiple files), and show them on the page (most relevant first). If the search didn't include any of your keywords, insult the user for such a stupid, irrelevant search.
+
+Double Down
+Now, make sure that you have at least one result that appears in more than one of the keyword files. Your "search" engine should properly add the scores from both files for that result (e.g. a page about cats and larvae would get the sub of the scores from both cats.js and larvae.js). This should require re-sorting the results.
+
+To be clear, your page must:
+
+Use AJAX on each search to retrieve results for each keyword from the server
+Present them using the mocked-up template
+Sorted by relevance, summing relevance for results in multiple files
+The body excerpts should be cut off at some fixed length
+Insult on failure
+Commit and Push regularly!

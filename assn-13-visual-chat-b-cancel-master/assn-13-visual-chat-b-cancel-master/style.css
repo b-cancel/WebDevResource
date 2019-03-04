@@ -1,0 +1,24 @@
+.header { text-align:center }
+
+.label { text-align:right }
+.center { margin-left: auto; margin-right: auto; display: block }
+
+#login_dlg { position:absolute; width:250; top:30%; left:50%; margin-left:-125; border:2px black solid; text-align: center; padding: 10px }
+
+#playfield { margin-left: auto; margin-right: auto; display: none; position:relative;
+             width: 1000; height: 700; border: 3px gray solid }
+
+#chat { position: absolute; bottom: 10px; left: 10px; border: 2px gray solid }
+
+#chat #log { height: 200; overflow: auto }
+
+#hint { color: black }
+
+.sprite { text-align: center; position: absolute; }
+.sprite-self { color : red; }
+.sprite img { display: block; margin-left: auto; margin-right: auto }
+
+#template { display: none; }
+
+#status { text-decoration: italic }
+

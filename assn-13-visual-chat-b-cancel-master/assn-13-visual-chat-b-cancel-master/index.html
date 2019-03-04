@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Visual Chat Lab</title>
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+
+<body>
+  <h1 class="header">WebSocket!</h1>
+  <div class="header">
+    <p><em>event happened</em></p>
+    <p><em>event happened</em></p>
+    <p><em>event happened</em></p>
+  </div>
+
+  <div id="login_dlg">
+      <span id="hint"><em>Single words only, no spaces or special characters</em></span><br/>
+      Name: <input type="text" id="name"/><br/>
+      <input type="button" id="login" value="login"/>
+  </div>
+
+  <div id="playfield">
+    
+    <div class="sprite" id="template">
+      <div>Name</div>
+      <img src="brak.png"/>
+    </div>
+
+    <div id="chat">
+      <div id="log"></div>
+      <div id="chatline">
+        <input type="text" id="input" size="40"/>
+        <input type="button" id="send" value="Send"/>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="bchat.js"></script>
+</body>
+</html>
